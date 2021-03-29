@@ -25,18 +25,19 @@ namespace BookingAppStore.Controllers
         [HttpPost] // cand trimitem formularul
         public string Buy(Purchase purchase)
         {
-            purchase.Date = DateTime.Now;
-            // adaugam informatia despre cumparatura in baza de date
-            db.Purchases.Add(purchase);
-            // salvam schimbarile
-            db.SaveChanges();     
-            
             if (purchase.Person is null || purchase.Address is null)
             {
                 return "<h1 position=\"center\">Ati introdus gresit datele!</h1></br>" +
                        "<a href=\"http://localhost:5000/Home/Buy/1\">Din nou</a>";
             }
             else {
+                
+                purchase.Date = DateTime.Now;
+                // adaugam informatia despre cumparatura in baza de date
+                db.Purchases.Add(purchase);
+                // salvam schimbarile
+                db.SaveChanges();
+                
                 return "Multumim," + purchase.Person + " pentru cumparatura!";
             }
 
