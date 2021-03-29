@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Procurarea cartii";
+}
+    <div>
+        <h3>Formular pentru procurarea cartii</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+            <table>
+                <tr><td><p>Introdu numele tau: </p></td>
+                    <td><input type="text" name="Person" /> </td></tr>
+                <tr><td><p>Introdu adresa :</p></td><td> 
+                   <input type="text" name="Address" /> </td></tr>
+                <tr><td><input class="btn btn-primary" type="submit" value="Trimite"/> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
