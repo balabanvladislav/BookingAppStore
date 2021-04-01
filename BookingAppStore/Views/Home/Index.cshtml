@@ -3,36 +3,36 @@
 }
 <div>
     <h3>Vinzarea Cartilor</h3>
-<table>
-    <tr>
-        <td>
-            <p>Numele cartii</p></td>
-        <td>
-            <p>Autorul</p></td>
-        <td>
-            <p>Pretul</p></td>
-        <td> <a class="btn btn-primary" href="/Home/Add" role="button">Adauga o carte</a></td>
-        <td> </td>
-    </tr>
-    
-    
-    @foreach (var book in ViewBag.Books)
-    {
+    <table>
         <tr>
             <td>
-                <p>@book.Name</p></td>
+                <p>Numele cartii</p></td>
             <td>
-                <p>@book.Author</p></td>
-            <td> 
-                <p>@book.Price</p></td>
+                <p>Autorul</p></td>
             <td>
-                <a class="btn btn-primary" href="/Home/Buy/@book.Id" role="button">Cumpara</a>
-            </td>
-            <td>
-                <a class="btn btn-primary" href="/Home/Delete/" role="button">Sterge</a>
-            </td>
-            
+                <p>Pretul</p></td>
+            <td> <a class="btn btn-primary" href="/Home/Add" role="button">Adauga o carte</a></td>
+            <td> </td>
         </tr>
-    }
-</table>
+    
+    
+        @foreach (var book in ViewBag.Books)
+        {
+            <tr>
+                <td>
+                    <p>@book.Name</p></td>
+                <td>
+                    <p>@book.Author</p></td>
+                <td> 
+                    <p>@book.Price</p></td>
+                <td>
+                    <a class="btn btn-primary" href="/Home/Buy/@book.Id" role="button">Cumpara</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="/Home/Delete/" role="button">Sterge</a>
+                </td>
+            
+            </tr>
+        }
+    </table>
 </div>

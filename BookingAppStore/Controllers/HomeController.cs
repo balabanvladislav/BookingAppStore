@@ -26,12 +26,11 @@ namespace BookingAppStore.Controllers
         }
 
         [HttpPost] // cand trimitem formularul
-        public string Buy(Purchase purchase)
+        public ActionResult Buy(Purchase purchase)
         {
             if (purchase.Person is null || purchase.Address is null)
             {
-                return "<h1 position=\"center\">Ati introdus gresit datele!</h1></br>" +
-                       "<a href=\"http://localhost:5000/Home/Buy/1\">Din nou</a>";
+                return Index();
             }
             else
             {
@@ -44,7 +43,7 @@ namespace BookingAppStore.Controllers
                 // salvam schimbarile
                 db.SaveChanges();
 
-                return "Multumim," + purchase.Person + " pentru cumparatura!";
+                return Index();
             }
         }
 
