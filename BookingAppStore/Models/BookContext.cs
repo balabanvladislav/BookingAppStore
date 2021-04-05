@@ -8,6 +8,7 @@ namespace BookingAppStore.Models
         public DbSet<Purchase> Purchases { get; set; }
     }
 
+    // umple cu date db, si sterge datele trecute
     public class BookDbInitializer : DropCreateDatabaseAlways<BookContext>
     {
         protected override void Seed(BookContext db)

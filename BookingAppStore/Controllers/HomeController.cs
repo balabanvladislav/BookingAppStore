@@ -13,10 +13,12 @@ namespace BookingAppStore.Controllers
             // primi din BD toate obiectele Book
             var books = db.Books;
             // transmitem toate obiectele in proprietatea dinamica Books in ViewBag
-            ViewBag.Books = books;
+            // ViewBag.Books = books;
             // intoarcem vizualizarea
-            return View();
+            
+            return View(books);
         }
+         
 
         [HttpGet] // cand accesam saitul buy
         public ActionResult Buy(int id)
@@ -54,13 +56,13 @@ namespace BookingAppStore.Controllers
         }
 
         [HttpPost]
-        public string Add(Book book)
+        public ActionResult Add(Book book)
         {
             Console.WriteLine(book.Author);
             Console.WriteLine(book.Name);
             db.Books.Add(book);
             db.SaveChanges();
-            return "Adaugat cu succes!";
+            return Content("Adaugat cu succes");
         }
     }
 }

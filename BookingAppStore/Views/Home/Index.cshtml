@@ -1,4 +1,11 @@
 ﻿@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+@model IEnumerable<BookingAppStore.Models.Book>
+
+@{
     ViewBag.Title = "Magazin de carti";
 }
 <div>
@@ -16,8 +23,7 @@
         </tr>
     
     
-        @foreach (var book in ViewBag.Books)
-        {
+        @foreach (var book in Model){
             <tr>
                 <td>
                     <p>@book.Name</p></td>
@@ -29,9 +35,9 @@
                     <a class="btn btn-primary" href="/Home/Buy/@book.Id" role="button">Cumpara</a>
                 </td>
                 <td>
-                    <a class="btn btn-primary" href="/Home/Delete/" role="button">Sterge</a>
+                    <a class="btn btn-primary" href="/Home/Delete/@book.Id" role="button">Sterge</a>
                 </td>
-            
+             
             </tr>
         }
     </table>

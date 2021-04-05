@@ -11,7 +11,7 @@ namespace BookingAppStore
         protected void Application_Start()
         {
             // initializam umplerea BD
-            Database.SetInitializer(new BookDbInitializer()); 
+            // Database.SetInitializer(new BookDbInitializer()); 
             
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
